@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 
+		1. 빈(객체) 정의 ==> 객체 생성 
+		id="빈의 고유한 이름" class="객체를 생성할 클래스의 위치(패키지명.클래스명)"
+	-->
+	<bean id="my" class="com.sist.di03.MySqlDao" />
+	<bean id="ora" class="com.sist.di03.OracleDao"/>
+	
+	<!--  
+		2. 의존성 주입(DI)
+		  - setter를 이용하는 방식
+		  - 생성자를 이용하는 방식
+	-->
+	<bean id="service" class="com.sist.di03.ServiceImpl">
+		<constructor-arg ref="my" />
+	</bean>
+
+</beans>

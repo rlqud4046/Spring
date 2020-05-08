@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="player1" class="com.sist.di07.Player">
+		<constructor-arg value="박병호"/>
+		<constructor-arg value="36"/>
+		<constructor-arg>
+			<list>
+				<value>4번타자</value>
+				<value>1루수</value>
+			</list>
+		</constructor-arg>
+		<property name="height" value="185" />
+		<property name="weight" value="101" />
+	</bean>
+	<bean id="player2" class="com.sist.di07.Player">
+		<constructor-arg value="김광현"/>
+		<constructor-arg value="33"/>
+		<constructor-arg>
+			<list>
+				<value>투수</value>
+				<value>좌투타자</value>
+			</list>
+		</constructor-arg>
+		<property name="height" value="188" />
+		<property name="weight" value="88" />
+	</bean>
+	
+	<bean id="info" class="com.sist.di07.PlayerInfo">
+		<property name="player">
+			<ref bean="player2"/>
+		</property>
+	</bean>
+
+</beans>
